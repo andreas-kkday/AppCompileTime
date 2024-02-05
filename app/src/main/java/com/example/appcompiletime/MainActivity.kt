@@ -33,8 +33,9 @@ class MainActivity: AppCompatActivity() {
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
         }
-        println("MainActivity Changed 7")
+        println("MainActivity Changed 8")
         triggerDeprecated()
+        hello()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

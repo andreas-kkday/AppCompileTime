@@ -25,6 +25,7 @@ class SecondFragment: Fragment() {
     ): View {
 
         triggerDeprecated()
+        hello()
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
         return binding.root
     }

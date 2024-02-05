@@ -24,6 +24,7 @@ class FirstFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         triggerDeprecated()
+        hello()
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
     }
