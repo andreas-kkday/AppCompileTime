@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "AppCompileTime"
 include(":app")
- 
+include(":mylibrary")

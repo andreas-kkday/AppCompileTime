@@ -70,7 +70,7 @@ fun hello(): World {
 ```
 ![](incr-change-data-class.jpg)
 
-### 必考 回傳形態, 包含回傳 class 的內容形態改變, 都會影響到使用的檔案
+### 回傳形態, 包含回傳 class 的內容形態改變, 都會影響到使用的檔案
 
 如何改善
 
