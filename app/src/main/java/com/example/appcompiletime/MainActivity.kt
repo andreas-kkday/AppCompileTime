@@ -10,7 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.example.appcompiletime.databinding.ActivityMainBinding
-import com.example.mylibrary.fun_1
+import com.example.appmodule.LargeInstance
 
 class MainActivity: AppCompatActivity() {
 
@@ -38,7 +38,8 @@ class MainActivity: AppCompatActivity() {
         triggerDeprecated()
         hello()
 
-        fun_1()
+        val large = LargeInstance.getInstance()
+        large.funA_1()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
