@@ -1,16 +1,19 @@
 package com.example.appcompiletime
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import com.example.appcompiletime.databinding.ActivityMainBinding
-import com.example.appmodule.LargeInstance
+import com.example.appcompiletime.dto.keepclassmembers.Bob
+import com.example.appcompiletime.dto.keepnames.Allen
+import com.google.android.material.snackbar.Snackbar
+import com.google.gson.Gson
+import kotlinx.serialization.json.Json
 
 class MainActivity: AppCompatActivity() {
 
@@ -38,8 +41,32 @@ class MainActivity: AppCompatActivity() {
         triggerDeprecated()
         hello()
 
-        val large = LargeInstance.getInstance()
-        large.funA_1()
+        val jsonA = """
+            {"allen0":"a0","allen1":"a1"}
+        """.trimIndent()
+        val jsonB = """
+            {"bob0":"b0","bob1":"b1"}
+        """.trimIndent()
+        //{"a0":"a0","a1":"a1"}
+//        val a = A("a0", "a1")
+        //{"b0":"b0","b1":"b1"}
+//        val b = B("b0", "b1")
+
+        try{
+            println(">>> A " + Gson().fromJson(jsonA, Allen::class.java))
+        }catch(e: Exception) {
+            println(">>> A failed " + e)
+        }
+        try {
+            println(">>> B " + Gson().fromJson(jsonB, Bob::class.java))
+        }catch(e: Exception) {
+            println(">>> B failed " + e)
+        }
+
+//        println(">>> " + Json.encodeToString(a))
+//        println(">>> " + Json.encodeToString(b))
+//        println(">>> decode " + Json.decodeFromString<Allen>(jsonA))
+//        println(">>> decode " + Json.decodeFromString<Bob>(jsonB))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

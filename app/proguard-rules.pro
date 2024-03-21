@@ -19,3 +19,5 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keepnames class com.example.appcompiletime.dto.keepnames.**
+-keepclassmembernames class com.example.appcompiletime.dto.keepclassmembers.** { *; }
